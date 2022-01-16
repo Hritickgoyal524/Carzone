@@ -1,0 +1,39 @@
+{% if messages %}
+
+  {% for message in messages %}
+     
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+              <div id="message" class="container">
+                <div class="alert alert-{{ message.tags }}" alert-dismissable role="alert" style="background-color:rgb(241, 103, 103);color:white">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        
+                    <strong>
+                 <span style="color:white;" > Error:
+                 {{mesaage.tags|title}}
+                 {{message}}
+                </span>
+                </strong>
+                </div>
+              </div>
+        
+              {% else %}
+              <div id="message" class="container">
+                <div class="alert alert-{{ message.tags }}" alert-dismissable role="alert" style="background-color:rgb(147, 245, 240);color:white">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        
+                    <strong>
+                
+               <span style="color:white;">{{mesaage.tags|title}}
+                 {{message}}
+                 </span>
+                </strong>
+                </div>
+              </div>
+          
+              {% endif %}
+           
+          
+        
+  {% endfor %}
+
+{% endif %}
